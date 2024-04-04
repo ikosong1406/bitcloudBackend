@@ -7,11 +7,11 @@ require("../Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
 router.post("/", async (req, res) => {
-  const { _id, coinName, coinQuantity, coinPrice } = req.body;
+  const { userId, coinName, coinQuantity, coinPrice } = req.body;
 
   try {
     // Find the user by username
-    const user = await User.findOne({ _id });
+    const user = await User.findOne({ userId });
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });

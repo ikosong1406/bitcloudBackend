@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 app.use(express.json());
-// const userdata = require("./Routes/userdata");
+const userdata = require("./Routes/userdata");
 const register = require("./Routes/register");
 const login = require("./Routes/login");
 const verifyEmail = require("./Routes/verifyEmail");
@@ -15,6 +15,8 @@ const adminDeposit = require("./Routes/adminDeposit");
 const adminWithdrawal = require("./Routes/adminWithdrawal");
 const buyCoin = require("./Routes/buyCoin");
 const sellCoin = require("./Routes/sellCoin");
+const transaction = require("./Routes/transaction");
+const confirmTransaction = require("./Routes/confirmTransaction");
 
 const PORT = process.env.PORT || 5001;
 
@@ -42,9 +44,11 @@ app.use("/adminLogin", adminLogin);
 app.use("/adminRegister", adminRegister);
 app.use("/adminDeposit", adminDeposit);
 app.use("/adminWithdrawal", adminWithdrawal);
-// app.use("/userdata", userdata);
+app.use("/userdata", userdata);
 app.use("/buyCoin", buyCoin);
 app.use("/sellCoin", sellCoin);
+app.use("/transaction", transaction);
+app.use("/confirmTransaction", confirmTransaction);
 
 app.listen(PORT, () => {
   console.log("Server Started");
