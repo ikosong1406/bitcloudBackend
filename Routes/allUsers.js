@@ -6,12 +6,13 @@ require("../Schemas/UserDetails");
 
 const User = mongoose.model("UserInfo");
 
-router.post("/", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const users = await User.find();
-    res.json(users);
+    const users = await User.find(); // Fetch all users from the database
+    res.json(users); // Send the users as JSON response
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Error fetching users:", error);
+    res.status(500).json({ message: "Error fetching users" });
   }
 });
 
