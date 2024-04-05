@@ -11,10 +11,10 @@ router.post("/", async (req, res) => {
 
   try {
     const user = await User.findOneAndUpdate(
-      { _id: userId, totalbalance: { $gte: amount } },
+      { _id: userId1, totalbalance: { $gte: amount1 } },
       {
-        $inc: { totalbalance: -amount },
-        $push: { transactions: { type: "Withdrawal", amount } },
+        $inc: { totalbalance: -amount1 },
+        $push: { transactions: { type: "Withdrawal", amount1 } },
       },
       { new: true }
     );
