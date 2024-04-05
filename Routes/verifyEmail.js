@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
   });
 
   mailTransport().sendMail({
-    from: "emailverification@gmail.com",
+    from: "Bitnexemailverification@gmail.com",
     to: user.email,
     subject: "Verify Your Email Account",
     html: confirmVerification(

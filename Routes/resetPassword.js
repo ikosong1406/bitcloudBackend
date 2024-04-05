@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
 
   try {
     await mailTransport().sendMail({
-      from: "security@gmail.com",
+      from: "Bitnexsecurity@gmail.com",
       to: user.email,
       subject: "Password Reset Successfully",
       html: confirmVerification(

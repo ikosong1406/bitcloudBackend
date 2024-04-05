@@ -236,7 +236,7 @@ UserDetailsSchema.methods.sendTransactionEmail = async function (
     };
 
     await mailTransport().sendMail({
-      from: "bitnex@gmail.com",
+      from: "Bitnex@gmail.com",
       to: this.email,
       subject: "Transaction Notification",
       html: transactionTemplate(type, coinName, quantity, price, date),

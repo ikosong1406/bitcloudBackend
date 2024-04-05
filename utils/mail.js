@@ -11,11 +11,11 @@ exports.generateOTP = () => {
 
 exports.mailTransport = () => {
   return nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    host: "live.smtp.mailtrap.io",
+    port: 587,
     auth: {
-      user: "b8a2ba1a05b14a",
-      pass: "48b61489156df6",
+      user: "api",
+      pass: "5d3de07ebe406296d5843e70ab4a1a9e",
     },
   });
 };

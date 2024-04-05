@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
     await verificationToken.save();
 
     mailTransport().sendMail({
-      from: "emailverification@gmail.com",
+      from: "Bitnexemailverification@gmail.com",
       to: newUser.email,
       subject: "verify your email account",
       html: verifyCode(OTP),
