@@ -7,7 +7,7 @@ require("../Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
 router.post("/", async (req, res) => {
-  const { userId, amount } = req.body;
+  const { userId1, amount1 } = req.body;
 
   try {
     const user = await User.findOneAndUpdate(
@@ -25,7 +25,9 @@ router.post("/", async (req, res) => {
         .json({ error: "User not found or insufficient balance" });
     }
 
-    return res.status(200).json({ message: "Withdrawal successful" });
+    return res
+      .status(200)
+      .json({ message: "Withdrawal successful", status: "ok" });
   } catch (err) {
     console.error("Error withdrawing amount:", err);
     return res.status(500).json({ error: "Internal server error" });
