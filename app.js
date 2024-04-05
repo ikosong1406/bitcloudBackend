@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 app.use(express.json());
+const allUsers = require("./Routes/allUsers");
 const userdata = require("./Routes/userdata");
 const register = require("./Routes/register");
 const login = require("./Routes/login");
@@ -35,6 +36,7 @@ mongoose
 require("./Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
+app.use("/allUsers", allUsers);
 app.use("/register", register);
 app.use("/login", login);
 app.use("/verifyEmail", verifyEmail);
