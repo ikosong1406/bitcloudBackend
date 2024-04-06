@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
     // For demonstration, we're assuming you have a method in your User model to handle this
     // await User.confirmTransaction(adminTransaction);
 
-    res.json({ message: "Transaction confirmed" });
+    res.json({ message: "Transaction confirmed", status: "ok" });
   } catch (error) {
     console.error("Error confirming transaction:", error);
     res.status(500).json({ error: "Server error" });
