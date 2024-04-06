@@ -5,6 +5,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 const allUsers = require("./Routes/allUsers");
+const allTransaction = require("./Routes/allTransaction");
 const userdata = require("./Routes/userdata");
 const register = require("./Routes/register");
 const login = require("./Routes/login");
@@ -39,6 +40,7 @@ require("./Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
 app.use("/allUsers", allUsers);
+app.use("/allTransaction", allTransaction);
 app.use("/register", register);
 app.use("/login", login);
 app.use("/verifyEmail", verifyEmail);
