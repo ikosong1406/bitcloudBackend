@@ -10,7 +10,7 @@ require("../Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
 router.post("/", async (req, res) => {
-  const { firstname, lastname, email, password } = req.body;
+  const { name, email, password, role } = req.body;
   const oldUser = await User.findOne({ email: email });
   if (oldUser) {
     return res.send({ data: "User already exists!!" });
@@ -20,10 +20,10 @@ router.post("/", async (req, res) => {
 
   try {
     const newUser = await User.create({
-      firstname: firstname,
-      lastname: lastname,
+      name: name,
       email: email,
       password: encryptedPassword,
+      role: role,
     });
 
     const OTP = generateOTP();
