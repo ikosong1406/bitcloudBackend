@@ -1,4 +1,7 @@
-const User = require("../models/User");
+const mongoose = require("mongoose");
+require("../Schemas/UserDetails");
+
+const User = mongoose.model("UserInfo");
 
 module.exports = async function (req, res, next) {
   const { userId, pin } = req.body;

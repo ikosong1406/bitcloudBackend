@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-require("../Schemas/UsersDetails");
+require("../Schemas/UserDetails");
 
 const User = mongoose.model("UserInfo");
 
@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/complete", auth, async (req, res) => {
+router.get("/complete", async (req, res) => {
   try {
     let user = await User.findById(userId);
 
