@@ -8,7 +8,7 @@ const User = mongoose.model("UserInfo");
 const AdminTransaction = require("../Schemas/AdminTransaction");
 
 router.post("/", async (req, res) => {
-  const { userId, amount, type, walletAddress } = req.body;
+  const { userId, amount, type, walletAddress, method } = req.body;
 
   // Validate user ID (optional, depending on your authentication system)
 
@@ -30,6 +30,7 @@ router.post("/", async (req, res) => {
       amount,
       type,
       walletAddress,
+      method,
     });
 
     res.json({

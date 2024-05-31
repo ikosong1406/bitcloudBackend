@@ -4,7 +4,11 @@ const Staking = require("./stakeSchema");
 
 const UserDetailsSchema = new mongoose.Schema(
   {
-    name: {
+    firstname: {
+      type: String,
+      required: true,
+    },
+    lastname: {
       type: String,
       required: true,
     },
@@ -36,15 +40,19 @@ const UserDetailsSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    stakingBalance: {
+      type: Number,
+      default: 0,
+    },
     securityPhrase: {
       type: [String],
       required: false,
-      validate: {
-        validator: function (v) {
-          return Array.isArray(v) && v.length === 12;
-        },
-        message: "Security phrase must be an array of 12 words",
-      },
+      // validate: {
+      //   validator: function (v) {
+      //     return Array.isArray(v) && v.length === 12;
+      //   },
+      //   message: "Security phrase must be an array of 12 words",
+      // },
     },
     staking: [Staking.schema],
     bitcoin: { type: Number, default: 0 }, // BTC

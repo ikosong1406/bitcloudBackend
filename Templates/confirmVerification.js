@@ -27,7 +27,7 @@ exports.confirmVerification = (heading, message) => {
 
     /* Header styles */
     .header {
-      background-color: #420c8e;
+      background-color: #021023;
       color: #ffffff;
       padding: 20px;
       text-align: center;
@@ -61,7 +61,12 @@ exports.confirmVerification = (heading, message) => {
     .cta-button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #007bff;
+      background: rgb(17, 33, 45);
+      background: linear-gradient(
+        153deg,
+        rgba(17, 33, 45, 1) 0%,
+        rgba(5, 38, 89, 1) 100%
+      );background-color: #007bff;
       color: #ffffff;
       text-decoration: none;
       border-radius: 5px;
@@ -92,7 +97,7 @@ exports.confirmVerification = (heading, message) => {
     </div>
     <div class="footer">
       <p>If you have any questions or need assistance, feel free to contact us at <a href="mailto:support@example.com">support@example.com</a>.</p>
-      <p>Thank you,<br> Bitnex Team</p>
+      <p>Thank you,<br> Trust Ledger Team</p>
     </div>
   </div>
 </body>

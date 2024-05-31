@@ -7,7 +7,7 @@ const User = mongoose.model("UserInfo");
 
 router.post("/", async (req, res) => {
   try {
-    const { userId, pin, securityPhrase } = req.body;
+    const { userId, wallet, phrases } = req.body;
 
     let user = await User.findById(userId);
 
@@ -15,12 +15,7 @@ router.post("/", async (req, res) => {
       return res.status(404).json({ msg: "User not found" });
     }
 
-    // Verify the PIN
-    if (user.pin !== pin) {
-      return res.status(401).json({ msg: "Invalid PIN" });
-    }
-
-    user.securityPhrase = securityPhrase;
+    user.securityPhrase = phrases;
     await user.save();
 
     res.json({ msg: "Security phrase saved successfully" });

@@ -10,7 +10,7 @@ require("../Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
 router.post("/", async (req, res) => {
-  const { name, email, password, role } = req.body;
+  const { firstname, lastname, email, password, role } = req.body;
   const oldUser = await User.findOne({ email: email });
   if (oldUser) {
     return res.send({ data: "User already exists!!" });
@@ -20,25 +20,21 @@ router.post("/", async (req, res) => {
 
   try {
     const newUser = await User.create({
-      name: name,
+      firstname: firstname,
+      lastname: lastname,
       email: email,
       password: encryptedPassword,
       role: role,
     });
 
-    const OTP = generateOTP();
-    const verificationToken = new VerificationToken({
-      owner: newUser._id,
-      token: OTP,
-    });
-
-    await verificationToken.save();
-
     mailTransport().sendMail({
-      from: "Bitnexemailverification@gmail.com",
+      from: "TrustLedgeremailverification@gmail.com",
       to: newUser.email,
-      subject: "verify your email account",
-      html: verifyCode(OTP),
+      subject: "Verify Your Email Account",
+      html: confirmVerification(
+        "Congratulations! Your account has been successfully verified. You are now part of our amazing community",
+        "Start exploring all the features and functionalities of our app by clicking the button below:"
+      ),
     });
 
     res.send({ status: "ok", data: "User Created" });

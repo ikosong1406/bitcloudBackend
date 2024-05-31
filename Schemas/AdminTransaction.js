@@ -19,6 +19,10 @@ const AdminTransactionSchema = new mongoose.Schema({
     enum: ["deposit", "withdrawal"],
     required: true,
   },
+  method: {
+    type: String,
+    enum: ["tether", "bitcoin", "paypal"],
+  },
   status: {
     type: String,
     enum: ["pending", "confirmed"],

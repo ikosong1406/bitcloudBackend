@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
   });
 
   mailTransport().sendMail({
-    from: "Bitnexemailverification@gmail.com",
+    from: "TrustLedgeremailverification@gmail.com",
     to: user.email,
     subject: "Verify Your Email Account",
     html: confirmVerification(
@@ -53,7 +53,7 @@ router.post("/", async (req, res) => {
       "Start exploring all the features and functionalities of our app by clicking the button below:"
     ),
   });
-  res.json({ success: true, message: "Your email is verified" });
+  res.json({ success: true, message: "Your email is verified", status: "ok" });
 });
 
 module.exports = router;
