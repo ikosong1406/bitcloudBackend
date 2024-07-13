@@ -1,21 +1,28 @@
 const nodemailer = require("nodemailer");
 
-exports.generateOTP = () => {
-  let otp = "";
-  for (let i = 0; i < 4; i++) {
-    const randVal = Math.round(Math.random() * 9);
-    otp = otp + randVal;
-  }
-  return otp;
-};
+const transporter = nodemailer.createTransport({
+  host: "mail.trustleger.com",
+  port: 587,
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: "support@trustleger.com", // your email
+    pass: "Trustleger14", // your email password
+  },
+  tls: {
+    rejectUnauthorized: false,
+  },
+});
 
-exports.mailTransport = () => {
-  return nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
-    auth: {
-      user: "b8a2ba1a05b14a",
-      pass: "48b61489156df6",
-    },
-  });
-};
+async function sendMail(to, subject, text, html) {
+  const mailOptions = {
+    from: "support@trustleger.com",
+    to,
+    subject,
+    text,
+    html,
+  };
+
+  return transporter.sendMail(mailOptions);
+}
+
+module.exports = { sendMail };
