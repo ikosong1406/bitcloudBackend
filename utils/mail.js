@@ -1,12 +1,37 @@
 const nodemailer = require("nodemailer");
 
+// const transporter = nodemailer.createTransport({
+//   host: "mail.trustleger.com",
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: "support@trustleger.com",
+//     pass: "Trustleger14",
+//   },
+//   tls: {
+//     rejectUnauthorized: false,
+//   },
+// });
+
+// async function sendMail(to, subject, text, html) {
+//   const mailOptions = {
+//     from: "support@trustleger.com",
+//     to,
+//     subject,
+//     text,
+//     html,
+//   };
+
+//   return transporter.sendMail(mailOptions);
+// }
+
 const transporter = nodemailer.createTransport({
-  host: "mail.trustleger.com",
-  port: 587,
-  secure: false, // true for 465, false for other ports
+  host: "mail.bitvelar.com",
+  port: 465,
+  secure: false,
   auth: {
-    user: "support@trustleger.com", // your email
-    pass: "Trustleger14", // your email password
+    user: "support@bitvelar.com",
+    pass: "Bitvelar@14",
   },
   tls: {
     rejectUnauthorized: false,
@@ -15,7 +40,7 @@ const transporter = nodemailer.createTransport({
 
 async function sendMail(to, subject, text, html) {
   const mailOptions = {
-    from: "support@trustleger.com",
+    from: "support@bitvelar.com",
     to,
     subject,
     text,
