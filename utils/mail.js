@@ -28,7 +28,7 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
   host: "mail.bitvelar.com",
   port: 465,
-  secure: false,
+  secure: true,
   auth: {
     user: "support@bitvelar.com",
     pass: "Bitvelar@14",

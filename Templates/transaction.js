@@ -45,13 +45,13 @@ module.exports.Transactions = (firstName, amount, type) => {
         <li><strong>Amount:</strong> $ ${amount}</li>
         <li><strong>Transaction Type:</strong> ${type}</li>
       </ul>
-      <p>Thank you for using Trustleger for your financial needs. If you have any questions or need further assistance, feel free to reach out to our support team at <a href="mailto:support@trustleger.com">support@trustleger.com</a>.</p>
+      <p>Thank you for using Bitvelar. If you have any questions or need further assistance, feel free to reach out to our support team at <a href="mailto:support@bitvelar.com">support@bitvelar.com</a>.</p>
       <p>Best regards,</p>
-      <p>The Trustleger Team</p>
+      <p>The Bitvelar Team</p>
     </div>
     <div class="footer">
-      <p>For more information, visit our <a href="https://trustleger.com">website</a> or contact us at <a href="mailto:support@trustleger.com">support@trustleger.com</a>.</p>
-      <a href="https://trustleger.com/login" class="button">Go to Dashboard</a>
+      <p>For more information, visit our <a href="https://bitvelar.com">website</a> or contact us at <a href="mailto:support@bitvelar.com">support@bitvelar.com</a>.</p>
+      <a href="https://bitvelar.com/login" class="button">Go to Dashboard</a>
     </div>
   </div>
 </body>

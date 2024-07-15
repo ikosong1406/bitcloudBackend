@@ -41,14 +41,14 @@ module.exports.Secure = (firstName) => {
     <div class="content">
       <p>Hi ${firstName},</p>
       <p>We are pleased to inform you that your security phrase has been securely stored in our system. Your assets are now protected with an additional layer of security.</p>
-      <p>At <strong>Trustleger</strong>, we prioritize the safety and security of your assets. You can rest assured that your financial information is well-protected.</p>
-      <p>Thank you for trusting us with your security needs. If you have any questions or need further assistance, feel free to reach out to our support team at <a href="mailto:support@trustleger.com">support@trustleger.com</a>.</p>
+      <p>At <strong>Bitvelar</strong>, we prioritize the safety and security of your assets. You can rest assured that your financial information is well-protected.</p>
+      <p>Thank you for trusting us with your security needs. If you have any questions or need further assistance, feel free to reach out to our support team at <a href="mailto:support@bitvelar.com">support@bitvelar.com</a>.</p>
       <p>Stay secure,</p>
-      <p>The Trustleger Team</p>
+      <p>The Bitvelar Team</p>
     </div>
     <div class="footer">
-      <p>For more information, visit our <a href="https://trustleger.com">website</a> or contact us at <a href="mailto:support@trustleger.com">support@trustleger.com</a>.</p>
-      <a href="https://trustleger.com/login" class="button">Go to Dashboard</a>
+      <p>For more information, visit our <a href="https://bitvelar.com">website</a> or contact us at <a href="mailto:support@bitvelar.com">support@bitvelar.com</a>.</p>
+      <a href="https://bitvelar.com/login" class="button">Go to Dashboard</a>
     </div>
   </div>
 </body>
