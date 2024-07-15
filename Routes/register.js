@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
 
     sendMail(
       newUser.email,
-      "Welcome to Trustleger",
+      "Welcome to Bitvelar",
       "",
       Welcome(newUser.firstname)
     );
