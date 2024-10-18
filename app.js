@@ -22,7 +22,7 @@ const sendMail = require("./Routes/sendMail");
 const PORT = process.env.PORT || 5001;
 
 const mongoUrl =
-  "mongodb+srv://bitcoinApp:bitcoinApp@database.q10t0nf.mongodb.net/?retryWrites=true&w=majority&appName=Database";
+  "mongodb+srv://BitCloud:BitCloud@database.snpvz.mongodb.net/?retryWrites=true&w=majority&appName=Database";
 
 mongoose
   .connect(mongoUrl)

@@ -38,6 +38,10 @@ const UserDetailsSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    mining: {
+      type: Number,
+      default: 0,
+    },
     securityPhrase: {
       type: [String],
       required: false,

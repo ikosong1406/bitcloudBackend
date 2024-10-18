@@ -30,14 +30,14 @@ module.exports.Welcome = (firstName) => {
   <div class="container">
     <div class="content">
       <p>Hi ${firstName},</p>
-      <p>Welcome to <strong>Bitvelar</strong>!</p>
-       <p>We are thrilled to have you on board. At Bitvelar, we strive as cutting-edge decentralized web3 system designed to revolutionize the way you invest in crypto.</p>
-      <p>If you have any questions or need assistance, feel free to reach out to our support team at <a href="mailto:support@bitvelar.com">[support email]</a>.</p>
+      <p>Welcome to <strong>BitCloud</strong>!</p>
+       <p>We are thrilled to have you on board. At BitCloud, we strive as cutting-edge decentralized web3 system designed to revolutionize the way you invest in crypto.</p>
+      <p>If you have any questions or need assistance, feel free to reach out to our support team at <a href="mailto:support@bitcloud.bitvelar.com">[support email]</a>.</p>
       <p>Thank you for joining us.</p>
     </div>
     <div class="footer">
       <p>Best regards,<br>
-      The Bitvelar Team</p>
+      The BitCloud Team</p>
     </div>
   </div>
 </body>
