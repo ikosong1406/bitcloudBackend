@@ -40,9 +40,6 @@ const transactionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  dueDate: {
-    type: Date,
-  },
 });
 
 module.exports = mongoose.model("Transaction", transactionSchema);
