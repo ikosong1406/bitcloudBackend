@@ -18,6 +18,8 @@ const userTransactions = require("./Routes/userTransaction");
 const editMethod = require("./Routes/editMethod");
 const allMethod = require("./Routes/allMethod");
 const sendMail = require("./Routes/sendMail");
+const updateMining = require("./Routes/updateMining");
+const miningWithdrawal = require("./Routes/miningWithdrawal");
 
 const PORT = process.env.PORT || 5001;
 
@@ -50,6 +52,9 @@ app.use("/userTransactions", userTransactions);
 app.use("/editMethod", editMethod);
 app.use("/allMethod", allMethod);
 app.use("/sendMail", sendMail);
+app.use("/updateMining", updateMining);
+app.use("/miningWithdrawal", miningWithdrawal);
+
 app.listen(PORT, () => {
   console.log("Server Started");
 });
