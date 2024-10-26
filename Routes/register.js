@@ -25,7 +25,6 @@ router.post("/", async (req, res) => {
       lastname: lastname,
       email: email,
       password: encryptedPassword,
-      status: "notverified",
     });
 
     sendMail(
