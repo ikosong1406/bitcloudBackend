@@ -23,7 +23,7 @@ const transactionSchema = new mongoose.Schema({
   },
   method: {
     type: String,
-    enum: ["tether", "bitcoin", "paypal"],
+    enum: ["usdt", "bitcoin"],
   },
   status: {
     type: String,
