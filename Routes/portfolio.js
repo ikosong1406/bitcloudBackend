@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
     user.totalBalance -= amount;
 
     // Update the staking balance with the staked amount
-    user.investmentBalance += amount;
+    user.totalInvestment += amount;
 
     const startDate = new Date();
 
