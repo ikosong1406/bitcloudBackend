@@ -1,4 +1,4 @@
-module.exports.Portfolio = (firstName, amount, days, rate, carModel) => {
+module.exports.Portfolio = (firstName, share, amount, profit, name) => {
   return `<!DOCTYPE html>
 <html>
 <head>
@@ -69,20 +69,20 @@ module.exports.Portfolio = (firstName, amount, days, rate, carModel) => {
   <div class="container">
     <div class="header">
       <img src="https://res.cloudinary.com/duqlw2kta/image/upload/v1729952036/logo_oljmhd.png" alt="Luxeride Logo">
-      <h1>Luxeride Investment Confirmation</h1>
-      <p>Luxury Car Rentals & Investment Opportunities</p>
+      <h1>Luxeride</h1>
+      <h2>Investment Agreement</h2>
     </div>
 
     <div class="content">
       <p>Dear ${firstName},</p>
       <p>Congratulations on securing your investment in Luxeride! We’re thrilled to have you as part of our exclusive community. Below is a summary of your recent investment:</p>
 
-      <h2>Investment Details</h2>
+      <h2>Investment Breakdown</h2>
       <ul class="investment-details">
-        <li><strong>Investment Amount:</strong> $${amount}</li>
-        <li><strong>Duration:</strong> ${days} days</li>
-        <li><strong>Projected Rate of Return:</strong> ${rate}%</li>
-        <li><strong>Car Model:</strong> ${carModel}</li>
+        <li><strong>Shareholding:</strong> ${share}%</li>
+        <li><strong>Investment Amount:</strong> ${amount} days</li>
+        <li><strong>Estimated Profit:</strong> ${profit}%</li>
+        <li><strong>Car Model:</strong> ${name}</li>
       </ul>
 
       <p>With Luxeride, you’re not only investing in luxury but also in future financial growth. We look forward to achieving great returns together.</p>

@@ -9,7 +9,7 @@ const User = mongoose.model("UserInfo");
 
 router.post("/", async (req, res) => {
   try {
-    const { userId, amount, days, rate } = req.body;
+    const { userId, picture, name, amount, share, profit } = req.body;
 
     // Convert amount to an integer
     // const stakedAmount = parseInt(amount, 10);
@@ -25,74 +25,40 @@ router.post("/", async (req, res) => {
     }
 
     // Deduct the staked amount from the user's balance
-    user.balance -= amount;
+    user.totalBalance -= amount;
 
     // Update the staking balance with the staked amount
-    user.stakingBalance += amount;
+    user.investmentBalance += amount;
 
     const startDate = new Date();
-    const endDate = new Date(startDate);
-    endDate.setDate(endDate.getDate() + days);
 
-    const newStake = {
+    const newPortfolio = {
+      picture,
+      name,
       amount: amount,
-      days,
-      rate,
+      share,
+      profit,
       startDate,
-      endDate,
       status: "active",
     };
 
-    user.staking.push(newStake);
+    user.portfolio.push(newPortfolio);
     await user.save();
 
     sendMail(
       user.email,
-      "Fixed Capital Confirmation",
+      "Investment Confirmation",
       "",
-      Portfolio(user.firstname, newStake.amount, newStake.days, newStake.days)
+      Portfolio(
+        user.firstname,
+        newPortfolio.share,
+        newPortfolio.amount,
+        newPortfolio.profit,
+        newPortfolio.name
+      )
     );
 
-    res.json({ msg: "Staking initiated successfully", stake: newStake });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-});
-
-router.get("/complete", async (req, res) => {
-  try {
-    let user = await User.findById(userId);
-
-    if (!user) {
-      return res.status(404).json({ msg: "User not found" });
-    }
-
-    const now = new Date();
-    let updated = false;
-
-    user.staking.forEach((stake) => {
-      if (stake.status === "active" && now >= new Date(stake.endDate)) {
-        const interest = (stake.amount * stake.rate * stake.days) / (100 * 365);
-        const totalAmount = stake.amount + interest;
-
-        // Add the staked amount and interest to the user's balance
-        user.balance += totalAmount;
-
-        // Deduct the staked amount from the staking balance
-        user.stakingBalance -= stake.amount;
-
-        stake.amount = totalAmount;
-        stake.status = "completed";
-        updated = true;
-      }
-    });
-
-    if (updated) {
-      await user.save();
-    }
-
-    res.json({ msg: "Stakes checked and updated", balance: user.balance });
+    res.json({ msg: "Investment initiated successfully" });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
