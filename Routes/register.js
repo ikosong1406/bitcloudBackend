@@ -9,7 +9,7 @@ require("../Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
 router.post("/", async (req, res) => {
-  const { firstname, lastname, email, password, role } = req.body;
+  const { firstname, lastname, email, password } = req.body;
   try {
     const oldUser = await User.findOne({ email: email });
     if (oldUser) {
@@ -25,12 +25,12 @@ router.post("/", async (req, res) => {
       lastname: lastname,
       email: email,
       password: encryptedPassword,
-      role: role,
+      status: "notverified",
     });
 
     sendMail(
       newUser.email,
-      "Welcome to Bitvelar",
+      "Welcome to LuxeRide",
       "",
       Welcome(newUser.firstname)
     );
