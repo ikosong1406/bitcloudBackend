@@ -10,16 +10,10 @@ const userdata = require("./Routes/userdata");
 const register = require("./Routes/register");
 const login = require("./Routes/login");
 const transaction = require("./Routes/transaction");
-const assetSecurity = require("./Routes/assetSecurity");
-const staking = require("./Routes/staking");
+const portfolio = require("./Routes/portfolio");
 const adminEdituser = require("./Routes/adminEdituser");
 const adminEdittransaction = require("./Routes/adminEdittransaction");
 const userTransactions = require("./Routes/userTransaction");
-const editMethod = require("./Routes/editMethod");
-const allMethod = require("./Routes/allMethod");
-const sendMail = require("./Routes/sendMail");
-const updateMining = require("./Routes/updateMining");
-const miningWithdrawal = require("./Routes/miningWithdrawal");
 
 const PORT = process.env.PORT || 5001;
 
@@ -43,17 +37,11 @@ app.use("/register", register);
 app.use("/userdata", userdata);
 app.use("/allUsers", allUsers);
 app.use("/allTransaction", allTransaction);
-app.use("/assetSecurity", assetSecurity);
 app.use("/transaction", transaction);
-app.use("/staking", staking);
+app.use("/portfolio", portfolio);
 app.use("/adminEdituser", adminEdituser);
 app.use("/adminEdittransaction", adminEdittransaction);
 app.use("/userTransactions", userTransactions);
-app.use("/editMethod", editMethod);
-app.use("/allMethod", allMethod);
-app.use("/sendMail", sendMail);
-app.use("/updateMining", updateMining);
-app.use("/miningWithdrawal", miningWithdrawal);
 
 app.listen(PORT, () => {
   console.log("Server Started");
