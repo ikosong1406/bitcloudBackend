@@ -20,7 +20,7 @@ const UserDetailsSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: ["verified", "notverified"],
-      default: "notverified",
+      default: "verified",
     },
     gender: {
       type: String,
