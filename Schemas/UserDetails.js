@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Transaction = require("./TransactionDetails");
-const Staking = require("./stakeSchema");
+const Portfolio = require("./portfolioSchema");
 
 const UserDetailsSchema = new mongoose.Schema(
   {
@@ -24,34 +24,34 @@ const UserDetailsSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["active", "blocked"],
-      default: "active",
+      enum: ["verified", "notverified"],
+      default: "notverified",
     },
-    dateOfBirth: {
+    gender: {
       type: String,
     },
-    balance: {
-      type: Number,
-      default: 5,
+    phoneNumber: {
+      type: String,
     },
-    stakingBalance: {
+    country: {
+      type: String,
+    },
+    tin: {
+      type: String,
+    },
+    totalBalance: {
       type: Number,
       default: 0,
     },
-    mining: {
+    totalInvestment: {
       type: Number,
       default: 0,
     },
-    securityPhrase: {
-      type: [String],
-      required: false,
+    totalReturn: {
+      type: Number,
+      default: 0,
     },
-    staking: [Staking.schema],
-    bitcoin: { type: Number, default: 0 }, // BTC
-    ethereum: { type: Number, default: 0 }, // ETH
-    solana: { type: Number, default: 0 }, // SOL
-    ripples: { type: Number, default: 0 }, // XRP
-    stellar: { type: Number, default: 0 }, // DOGE
+    portfolio: [Portfolio.schema],
     transactions: [Transaction.schema],
   },
   {

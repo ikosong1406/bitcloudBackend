@@ -1,24 +1,24 @@
 const mongoose = require("mongoose");
 
-const stakingSchema = new mongoose.Schema({
+const portfolioSchema = new mongoose.Schema({
+  picture: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
   amount: {
     type: Number,
     required: true,
   },
-  days: {
+  share: {
+    type: String,
+    required: true,
+  },
+  profit: {
     type: Number,
-    required: true,
-  },
-  rate: {
-    type: Number,
-    required: true,
-  },
-  startDate: {
-    type: Date,
-    required: true,
-  },
-  endDate: {
-    type: Date,
     required: true,
   },
   status: {
@@ -28,4 +28,4 @@ const stakingSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Staking", stakingSchema);
+module.exports = mongoose.model("Portfolio", portfolioSchema);

@@ -13,12 +13,6 @@ const transactionSchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  lname: {
-    type: String,
-  },
-  profit: {
-    type: Number,
-  },
   walletAddress: {
     type: String,
   },
