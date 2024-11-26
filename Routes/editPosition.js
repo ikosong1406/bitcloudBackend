@@ -7,9 +7,8 @@ router.post(
   "/",
   upload.fields([{ name: "image", maxCount: 1 }]),
   async (req, res) => {
+    const { id, name } = req.body;
     try {
-      const { positionId, name } = req.body;
-
       // Prepare the update data dynamically
       const updateData = {};
 
@@ -20,19 +19,15 @@ router.post(
 
       // Update image if provided
       if (req.files && req.files.image) {
-        const imageFile = req.files.image[0]; // Multer's uploaded file
-        const cloudinary = require("cloudinary").v2;
-
-        // Upload image to Cloudinary
-        const uploadResult = await cloudinary.uploader.upload(imageFile.path);
+        const image = req.files["image"] ? req.files["image"][0].path : null;
 
         // Save the URL from Cloudinary
-        updateData.image = uploadResult.secure_url;
+        updateData.image = image;
       }
 
       // Update the position in the database
       const updatedPosition = await Position.findOneAndUpdate(
-        { _id: positionId },
+        { _id: id },
         updateData,
         { new: true } // Return the updated document
       );
@@ -45,6 +40,19 @@ router.post(
         message: "Position updated successfully",
         status: "ok",
         data: updatedPosition,
+      });
+
+      const cover = req.files["cover"] ? req.files["cover"][0].path : null;
+
+      const newNews = await News.create({
+        cover: cover,
+        heading: heading,
+        body: body,
+      });
+
+      return res.status(200).json({
+        status: "ok",
+        data: "News Created",
       });
     } catch (error) {
       console.error("Error updating position:", error);
