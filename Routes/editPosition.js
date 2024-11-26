@@ -41,19 +41,6 @@ router.post(
         status: "ok",
         data: updatedPosition,
       });
-
-      const cover = req.files["cover"] ? req.files["cover"][0].path : null;
-
-      const newNews = await News.create({
-        cover: cover,
-        heading: heading,
-        body: body,
-      });
-
-      return res.status(200).json({
-        status: "ok",
-        data: "News Created",
-      });
     } catch (error) {
       console.error("Error updating position:", error);
       res.status(500).json({ error: "Internal server error" });
