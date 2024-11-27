@@ -19,6 +19,7 @@ const allNews = require("./Routes/allNews");
 const allPosition = require("./Routes/allPosition");
 const allContact = require("./Routes/allContact");
 const editPosition = require("./Routes/editPosition");
+const editContact = require("./Routes/editContact");
 const newNews = require("./Routes/newNews");
 const deleteNews = require("./Routes/deleteNews");
 
@@ -54,6 +55,7 @@ app.use("/allNews", allNews);
 app.use("/allPosition", allPosition);
 app.use("/allContact", allContact);
 app.use("/editPosition", editPosition);
+app.use("/editContact", editContact);
 app.use("/newNews", newNews);
 app.use("/deleteNews", deleteNews);
 
