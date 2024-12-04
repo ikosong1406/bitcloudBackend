@@ -27,6 +27,8 @@ const deleteNews = require("./Routes/deleteNews");
 
 const allMethod = require("./Routes/allMethod");
 const editMethod = require("./Routes/editMethod");
+const allLocation = require("./Routes/allLocation");
+const newLocation = require("./Routes/newLocation");
 
 const PORT = process.env.PORT || 5001;
 
@@ -71,6 +73,8 @@ app.use("/addAlumni", addAlumni);
 // brainclub
 app.use("/allMethod", allMethod);
 app.use("/editMethod", editMethod);
+app.use("/allLocation", allLocation);
+app.use("/newLocation", newLocation);
 
 app.listen(PORT, () => {
   console.log("Server Started");
