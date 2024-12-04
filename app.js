@@ -18,9 +18,11 @@ const userTransactions = require("./Routes/userTransaction");
 const allNews = require("./Routes/allNews");
 const allPosition = require("./Routes/allPosition");
 const allContact = require("./Routes/allContact");
+const allAlumni = require("./Routes/allAlumni");
 const editPosition = require("./Routes/editPosition");
 const editContact = require("./Routes/editContact");
 const newNews = require("./Routes/newNews");
+const addAlumni = require("./Routes/addAlumni");
 const deleteNews = require("./Routes/deleteNews");
 
 const PORT = process.env.PORT || 5001;
@@ -51,6 +53,7 @@ app.use("/adminEdituser", adminEdituser);
 app.use("/adminEdittransaction", adminEdittransaction);
 app.use("/userTransactions", userTransactions);
 
+app.use("/allAlumni", allAlumni);
 app.use("/allNews", allNews);
 app.use("/allPosition", allPosition);
 app.use("/allContact", allContact);
@@ -58,6 +61,7 @@ app.use("/editPosition", editPosition);
 app.use("/editContact", editContact);
 app.use("/newNews", newNews);
 app.use("/deleteNews", deleteNews);
+app.use("/addAlumni", addAlumni);
 
 app.listen(PORT, () => {
   console.log("Server Started");
