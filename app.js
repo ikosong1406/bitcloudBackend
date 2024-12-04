@@ -25,6 +25,9 @@ const newNews = require("./Routes/newNews");
 const addAlumni = require("./Routes/addAlumni");
 const deleteNews = require("./Routes/deleteNews");
 
+const allMethod = require("./Routes/allMethod");
+const editMethod = require("./Routes/editMethod");
+
 const PORT = process.env.PORT || 5001;
 
 const mongoUrl =
@@ -42,6 +45,7 @@ mongoose
 require("./Schemas/UserDetails");
 const User = mongoose.model("UserInfo");
 
+// luxeride
 app.use("/login", login);
 app.use("/register", register);
 app.use("/userdata", userdata);
@@ -53,6 +57,7 @@ app.use("/adminEdituser", adminEdituser);
 app.use("/adminEdittransaction", adminEdittransaction);
 app.use("/userTransactions", userTransactions);
 
+// nuas
 app.use("/allAlumni", allAlumni);
 app.use("/allNews", allNews);
 app.use("/allPosition", allPosition);
@@ -62,6 +67,10 @@ app.use("/editContact", editContact);
 app.use("/newNews", newNews);
 app.use("/deleteNews", deleteNews);
 app.use("/addAlumni", addAlumni);
+
+// brainclub
+app.use("/allMethod", allMethod);
+app.use("/editMethod", editMethod);
 
 app.listen(PORT, () => {
   console.log("Server Started");
