@@ -19,10 +19,12 @@ const allNews = require("./Routes/allNews");
 const allPosition = require("./Routes/allPosition");
 const allContact = require("./Routes/allContact");
 const allAlumni = require("./Routes/allAlumni");
+const allGallery = require("./Routes/allGallery");
 const editPosition = require("./Routes/editPosition");
 const editContact = require("./Routes/editContact");
 const newNews = require("./Routes/newNews");
 const addAlumni = require("./Routes/addAlumni");
+const addGallery = require("./Routes/addGallery");
 const deleteNews = require("./Routes/deleteNews");
 
 const allMethod = require("./Routes/allMethod");
@@ -61,6 +63,7 @@ app.use("/userTransactions", userTransactions);
 
 // nuas
 app.use("/allAlumni", allAlumni);
+app.use("/allGallery", allGallery);
 app.use("/allNews", allNews);
 app.use("/allPosition", allPosition);
 app.use("/allContact", allContact);
@@ -69,6 +72,7 @@ app.use("/editContact", editContact);
 app.use("/newNews", newNews);
 app.use("/deleteNews", deleteNews);
 app.use("/addAlumni", addAlumni);
+app.use("/addGallery", addGallery);
 
 // brainclub
 app.use("/allMethod", allMethod);
